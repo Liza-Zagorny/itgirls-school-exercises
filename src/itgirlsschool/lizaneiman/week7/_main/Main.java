@@ -29,7 +29,7 @@ public class Main {
         do {
             numsList.add((int) Math.floor(Math.random() * 100));
         } while (numsList.size() < 6);
-        System.out.println(numsList.toString());
+        System.out.println(numsList);
         solution.deleteEvenNumbers(numsList);
     }
 }

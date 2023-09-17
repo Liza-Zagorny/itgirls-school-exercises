@@ -8,7 +8,7 @@ public class Solution {
 
         for (Integer element : nums) {
             if (result.contains(element)) {
-                continue;
+                //continue
             } else {
                 result.add(element);
             }
@@ -99,8 +99,6 @@ public class Solution {
                 size--;
             }
         }
-        System.out.println("Связаный список без четных чисел:" + linkedList.toString());
+        System.out.println("Связаный список без четных чисел:" + linkedList);
     }
-
-    ;
 }
