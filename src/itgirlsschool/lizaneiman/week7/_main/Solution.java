@@ -1,9 +1,6 @@
 package _main;
 
-import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.Map;
-import java.util.Stack;
+import java.util.*;
 
 public class Solution {
     public int[] removeDuplicates(int[] nums) {
@@ -91,4 +88,19 @@ public class Solution {
             System.out.println(element);
         }
     }
+
+    public void deleteEvenNumbers(LinkedList<Integer> linkedList) {
+        int size = linkedList.size();
+        for (int i = 0; i < size; i++) {
+            int item = linkedList.get(i);
+            if (item % 2 == 0) {
+                linkedList.remove(i);
+                i--;
+                size--;
+            }
+        }
+        System.out.println("Связаный список без четных чисел:" + linkedList.toString());
+    }
+
+    ;
 }
