@@ -1,4 +1,4 @@
-package _main;
+package service;
 
 import java.util.*;
 

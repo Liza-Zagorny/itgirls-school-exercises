@@ -1,6 +1,6 @@
 package _main;
 
-public class _Main {
+public class Main6 {
     public static void main(String[] args) {
         System.out.println("Hello world");
     }
