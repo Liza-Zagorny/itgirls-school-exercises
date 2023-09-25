@@ -61,11 +61,12 @@ public class SortingService {
         return result;
     }
 
-    public String[] mergeSort (String[] arr) {
+    public String[] mergeSort(String[] arr) {
         String[] buffer1 = Arrays.copyOf(arr, arr.length);
         String[] buffer2 = new String[arr.length];
         return sortByWordLength(buffer1, buffer2, 0, arr.length);
     }
+
     public String[] sortByWordLength(String[] buffer1, String[] buffer2, int startIndex, int endIndex) {
         if (startIndex >= endIndex - 1) return buffer1;
 
@@ -96,5 +97,31 @@ public class SortingService {
             destIndex++;
         }
         return result;
+    }
+
+    public void sortByVowels(String[] words) {
+        int j;
+        for (int i = 1; i < words.length; i++) {
+            String swap = words[i];
+            for (j = i; j > 0 && countVowels(swap) < countVowels(words[j - 1]); j--) {
+                words[j] = words[j - 1];
+            }
+            words[j] = swap;
+        }
+        System.out.println("Sorted array: " + Arrays.toString(words));
+    }
+
+    public int countVowels(String word) {
+        char[] vowels = {'a', 'e', 'i', 'o', 'u', 'y'};
+        int count = 0;
+        for (int i = 0; i < word.length(); i++) {
+            for (char vowel : vowels) {
+                if (word.charAt(i) == vowel) {
+                    count++;
+                    break;
+                }
+            }
+        }
+        return count;
     }
 }
