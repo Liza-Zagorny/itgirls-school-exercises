@@ -1,10 +1,12 @@
 package service;
 
 import java.util.*;
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
 
 public class SortingService {
     public void sortByScore(HashMap<String, Double> scores) {
-        List<Map.Entry<String, Double>> list = new ArrayList<Map.Entry<String, Double>>(scores.entrySet());
+        List<Map.Entry<String, Double>> list = new ArrayList<>(scores.entrySet());
         System.out.println("Original list: " + list);
         for (int i = 0; i < list.size() - 1; i++) {
             for (int j = 0; j < list.size() - i - 1; j++) {
@@ -121,6 +123,34 @@ public class SortingService {
                     break;
                 }
             }
+        }
+        return count;
+    }
+
+    public void sortByOperationsNumber(String[] formulas) {
+        for (int i = 0; i < formulas.length; i++) {
+            int borderIndex = i;
+            String borderElement = formulas[i];
+            int minOperations = countMathOperations(borderElement);
+            for (int j = i; j < formulas.length; j++) {
+                int currentOperations = countMathOperations(formulas[j]);
+                if (currentOperations < minOperations) {
+                    borderIndex = j;
+                    borderElement = formulas[j];
+                }
+            }
+            formulas[borderIndex] = formulas[i];
+            formulas[i] = borderElement;
+        }
+        System.out.println("Sorted formulas: " + Arrays.toString(formulas));
+    }
+
+    private int countMathOperations(String formula) {
+        Pattern MATH_OPERATIONS = Pattern.compile("[-+*/]+");
+        Matcher countOperationsMatcher = MATH_OPERATIONS.matcher(formula);
+        int count = 0;
+        while (countOperationsMatcher.find()) {
+            count++;
         }
         return count;
     }

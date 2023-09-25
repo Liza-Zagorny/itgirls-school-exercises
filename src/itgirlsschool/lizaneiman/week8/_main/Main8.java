@@ -43,5 +43,6 @@ public class Main8 {
         System.out.println("\nExercise 5 - Selection Sort");
         String[] formulas = {"5+6+32=43", "1+1=2", "(3+5)*4*21=483", "((21-20)*(32-30))/2=1"};
         System.out.println("Original formulas:" + Arrays.toString(formulas));
+        solution.sortByOperationsNumber(formulas);
     }
 }
