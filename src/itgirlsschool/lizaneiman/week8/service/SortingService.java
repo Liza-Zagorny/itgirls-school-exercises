@@ -24,4 +24,35 @@ public class SortingService {
         }
         System.out.println(list);
     }
+
+    public void sortByAbc(String[] wordsArr, int lowIndex, int highIndex) {
+        if (wordsArr.length == 0 || lowIndex >= highIndex) return;
+        int middleIndex = lowIndex + (highIndex - lowIndex) / 2;
+        String borderWord = wordsArr[middleIndex];
+        // 0 + (3-0)/2 ~2
+        int i = lowIndex, j = highIndex;
+        while (i <= j) {
+            while (is1SmallerThan2(wordsArr[i],borderWord)) {
+                i++;
+            }
+            while (!is1SmallerThan2(wordsArr[j],borderWord)) {
+                j--;
+            }
+            if (i <= j) {
+                String temp = wordsArr[i];
+                wordsArr[i] = wordsArr[j];
+                wordsArr[j] = temp;
+                i++;
+                j--;
+            }
+        }
+        if (lowIndex < j) sortByAbc(wordsArr, lowIndex, j);
+
+    }
+
+    private boolean is1SmallerThan2(String word1, String word2) {
+        int minLength = Math.min(word1.length(), word2.length());
+
+        return true;
+    }
 }
