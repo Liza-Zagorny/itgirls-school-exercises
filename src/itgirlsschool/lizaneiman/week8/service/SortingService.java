@@ -111,7 +111,7 @@ public class SortingService {
         System.out.println("Sorted array: " + Arrays.toString(words));
     }
 
-    public int countVowels(String word) {
+    private int countVowels(String word) {
         char[] vowels = {'a', 'e', 'i', 'o', 'u', 'y'};
         int count = 0;
         for (int i = 0; i < word.length(); i++) {

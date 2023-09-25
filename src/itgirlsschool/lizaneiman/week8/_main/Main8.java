@@ -1,6 +1,7 @@
 package _main;
 
 import service.SortingService;
+
 import java.util.Arrays;
 import java.util.HashMap;
 
@@ -8,6 +9,7 @@ import java.util.HashMap;
 public class Main8 {
     public static void main(String[] args) {
         SortingService solution = new SortingService();
+
         // Exercise 1 - Bobble Sort
         System.out.println("Exercise 1 - Bobble Sort");
         HashMap<String, Double> scores = new HashMap<>();
@@ -17,23 +19,29 @@ public class Main8 {
         scores.put("Козлов", 5.0);
         scores.put("Смирнов", 3.9);
         solution.sortByScore(scores);
+
         // Exercise 2 - Quick Sort
         System.out.println("\nExercise 2 - Quick Sort");
         String[] fruits = {"apple", "orange", "grape", "banana"};
         System.out.println("Original array: " + Arrays.toString(fruits));
         solution.sortByAbc(fruits, 0, fruits.length - 1);
         System.out.println("Sorted array: " + Arrays.toString(fruits));
+
         // Exercise 3 - Merge Sort
         System.out.println("\nExercise 3 - Merge Sort");
         String[] objects = {"cat", "orange", "elephant", "bird"};
         System.out.println("Original array: " + Arrays.toString(objects));
         String[] result = solution.mergeSort(objects);
         System.out.println("Sorted array: " + Arrays.toString(result));
+
         // Exercise 4 - Insertion sort
         System.out.println("\nExercise 4 - Insertion sort");
         System.out.println("Original array: " + Arrays.toString(objects));
         solution.sortByVowels(objects);
+
         // Exercise 5 - Selection Sort
+        System.out.println("\nExercise 5 - Selection Sort");
         String[] formulas = {"5+6+32=43", "1+1=2", "(3+5)*4*21=483", "((21-20)*(32-30))/2=1"};
+        System.out.println("Original formulas:" + Arrays.toString(formulas));
     }
 }
