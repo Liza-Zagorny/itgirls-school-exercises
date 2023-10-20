@@ -10,6 +10,7 @@ public class Main11 {
 
         //solution.displayExercise1();
         //solution.displayExercise2();
+        solution.displayExercise3(16);
 
 
 //        Thread thread1 = new Thread(() -> {
